@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using GigHub.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace GigHub.ViewModel
 {
     public class GigFormViewModel
     {
-        public String Venue { get; set; }
-        public String Date { get; set; }
-        public String Time { get; set; }
+        [Required]
+        public string Venue { get; set; }
+
+        [Required]
+    //    [FutureDate]
+        public string Date { get; set; }
+
+        [Required]
+    //    [FutureTime]
+        public string Time { get; set; }
+
+        [Required]
         public byte Genre { get; set; }
+
         public IEnumerable<Genre> Genres { get; set; }
-        public DateTime DateTime {
-            get {
-                return DateTime.Parse(String.Format("{0} {1}", Date, Time));
-                }
+
+        public DateTime GetDateTime()
+        {
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     }
 }
