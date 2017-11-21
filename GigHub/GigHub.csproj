@@ -212,6 +212,14 @@
     <Compile Include="Migrations\201711211836578_SeedDatabase.Designer.cs">
       <DependentUpon>201711211836578_SeedDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711211935355_AddForeignKeysToGig.cs" />
+    <Compile Include="Migrations\201711211935355_AddForeignKeysToGig.Designer.cs">
+      <DependentUpon>201711211935355_AddForeignKeysToGig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711211941177_RenamePropFromGig.cs" />
+    <Compile Include="Migrations\201711211941177_RenamePropFromGig.Designer.cs">
+      <DependentUpon>201711211941177_RenamePropFromGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -310,6 +318,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711211836578_SeedDatabase.resx">
       <DependentUpon>201711211836578_SeedDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211935355_AddForeignKeysToGig.resx">
+      <DependentUpon>201711211935355_AddForeignKeysToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211941177_RenamePropFromGig.resx">
+      <DependentUpon>201711211941177_RenamePropFromGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
