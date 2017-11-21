@@ -144,3 +144,4 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddingGigGenreModels.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddDataAnnotation.resources
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.SeedDatabase.resources

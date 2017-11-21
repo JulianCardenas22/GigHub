@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201711211802465_AddDataAnnotation.Designer.cs">
       <DependentUpon>201711211802465_AddDataAnnotation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711211836578_SeedDatabase.cs" />
+    <Compile Include="Migrations\201711211836578_SeedDatabase.Designer.cs">
+      <DependentUpon>201711211836578_SeedDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -300,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711211802465_AddDataAnnotation.resx">
       <DependentUpon>201711211802465_AddDataAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211836578_SeedDatabase.resx">
+      <DependentUpon>201711211836578_SeedDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
