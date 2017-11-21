@@ -199,9 +199,19 @@
     <Compile Include="Migrations\201711211747483_InitialMigration.Designer.cs">
       <DependentUpon>201711211747483_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711211756175_AddingGigGenreModels.cs" />
+    <Compile Include="Migrations\201711211756175_AddingGigGenreModels.Designer.cs">
+      <DependentUpon>201711211756175_AddingGigGenreModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711211802465_AddDataAnnotation.cs" />
+    <Compile Include="Migrations\201711211802465_AddDataAnnotation.Designer.cs">
+      <DependentUpon>201711211802465_AddDataAnnotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -284,6 +294,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711211747483_InitialMigration.resx">
       <DependentUpon>201711211747483_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211756175_AddingGigGenreModels.resx">
+      <DependentUpon>201711211756175_AddingGigGenreModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711211802465_AddDataAnnotation.resx">
+      <DependentUpon>201711211802465_AddDataAnnotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
