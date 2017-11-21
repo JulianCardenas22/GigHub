@@ -7,7 +7,7 @@ using System.Web;
 
 namespace GigHub.ViewModel
 {
-    public class FutureTime : ValidationAttribute
+    public class ValidTime : ValidationAttribute
     {
        
             public override bool IsValid(object value)

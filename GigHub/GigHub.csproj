@@ -230,7 +230,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\FutureDate.cs" />
-    <Compile Include="ViewModel\FutureTime.cs" />
+    <Compile Include="ViewModel\ValidTime.cs" />
     <Compile Include="ViewModel\GigFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
