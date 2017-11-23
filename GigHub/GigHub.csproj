@@ -197,6 +197,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\GigsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -250,6 +251,10 @@
     <Compile Include="Migrations\201711222045411_AddFollowing.cs" />
     <Compile Include="Migrations\201711222045411_AddFollowing.Designer.cs">
       <DependentUpon>201711222045411_AddFollowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711231854519_AddIsCanceledGig.cs" />
+    <Compile Include="Migrations\201711231854519_AddIsCanceledGig.Designer.cs">
+      <DependentUpon>201711231854519_AddIsCanceledGig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -379,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711222045411_AddFollowing.resx">
       <DependentUpon>201711222045411_AddFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711231854519_AddIsCanceledGig.resx">
+      <DependentUpon>201711231854519_AddIsCanceledGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
