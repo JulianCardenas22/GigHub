@@ -17,12 +17,12 @@ namespace GigHub.Controllers
     public class GigsController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private DateTime _date;
+   
 
         public GigsController()
         {
              _context = new ApplicationDbContext();
-             _date = new DateTime();
+   
             
         }
 
@@ -31,10 +31,11 @@ namespace GigHub.Controllers
         {
             var viewModel = new GigFormViewModel
             {
-                Genres = _context.Genres.ToList()
+                Genres = _context.Genres.ToList(),
+                Heading="Add a gig"
             };
             
-            return View(viewModel);
+            return View("GigForm",viewModel);
         }
 
         [Authorize]
@@ -44,7 +45,7 @@ namespace GigHub.Controllers
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
-                return View("Create", viewModel);
+                return View("GigForm", viewModel);
             }
 
             try { 
@@ -108,6 +109,53 @@ namespace GigHub.Controllers
                                     .ToList();
             return View(gigs);
         }
-       
+
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            var artistId = User.Identity.GetUserId();
+            var gig = _context.Gigs.SingleOrDefault(g => g.Id == id && g.ArtistId == artistId);
+
+            var viewModel = new GigFormViewModel
+            {
+                Id = gig.Id,
+                Date = gig.DateTime.ToString("d MMM yyyy"),
+                Time = gig.DateTime.ToString("HH:mm"),
+                Genre= gig.GenreId,
+                Venue = gig.Venue,
+                Heading = "Edit a gig",
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("GigForm", viewModel);
+        }
+
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(GigFormViewModel viewModel)
+        {
+          
+
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
+                return View("GigForm", viewModel);
+            }
+
+            var artistId = User.Identity.GetUserId();
+            var gig = _context.Gigs.SingleOrDefault(g => g.Id == viewModel.Id && g.ArtistId == artistId);
+
+            gig.Venue = viewModel.Venue;
+            gig.DateTime = viewModel.GetDateTime();
+            gig.GenreId = viewModel.Genre;
+
+            _context.SaveChanges();
+   
+            
+            return RedirectToAction("Mine", "Gigs");
+
+        }
     }
 }

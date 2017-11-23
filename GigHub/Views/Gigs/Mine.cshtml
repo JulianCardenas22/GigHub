@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mine</h2>
+<h2>My Upcoming Gigs</h2>
 
 <ul class="gigs voffset4">
     @foreach (var gig in Model)
@@ -20,18 +20,17 @@
             </div>
             <div class="details">
                 <span class="artist">
-                   @gig.
-
-                  
-                        <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@gig.ArtistId">Follow</button>
-                  
+                   @gig.Venue                
                 </span>
+            
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
-               
-                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
-               
+                    
+                <div class="actions">
+                    <a href="@Url.Action("Edit","Gigs" , new { id = gig.Id })">Edit</a>
+
+                </div>
             </div>
         </li>
     }
@@ -65,4 +64,4 @@
                     });
             });
         });
-    </script>
+    </script>}

@@ -207,3 +207,4 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csproj.G
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csproj.CoreCompileInputs.cache
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.pdb
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache

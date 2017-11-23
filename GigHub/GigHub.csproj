@@ -345,6 +345,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Followees\Index.cshtml" />
     <Content Include="Views\Gigs\Mine.cshtml" />
+    <Content Include="Views\Gigs\GigForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

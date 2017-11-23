@@ -158,3 +158,11 @@ box-shadow:none;
           font-size:15px;
             display: block;
         }
+
+    .gigs > li .actions {
+        font-size:15px;
+        display:none;
+    }
+    .gigs > li:hover .actions{
+        display:block;
+    }

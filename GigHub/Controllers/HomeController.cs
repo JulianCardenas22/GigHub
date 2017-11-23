@@ -27,7 +27,7 @@ namespace GigHub.Controllers
                                             .Where(g => g.DateTime > DateTime.Now);
 
 
-            var viewModel = new HomeViewModel
+            var viewModel = new GigsViewModel
             {
                 UpComingGigs = upComingGigs,
                 ShowActions = User.Identity.IsAuthenticated,
