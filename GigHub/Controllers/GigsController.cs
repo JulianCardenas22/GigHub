@@ -17,10 +17,13 @@ namespace GigHub.Controllers
     public class GigsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private DateTime _date;
 
         public GigsController()
         {
              _context = new ApplicationDbContext();
+             _date = new DateTime();
+            
         }
 
         [Authorize]
@@ -70,7 +73,7 @@ namespace GigHub.Controllers
                 }
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Mine", "Gigs");
             
         }
 
@@ -94,6 +97,17 @@ namespace GigHub.Controllers
 
           
             return View("Gigs",viewModel);
+        } 
+
+        [Authorize]
+        public ActionResult Mine() {
+            
+            var userId = User.Identity.GetUserId();
+            var gigs = _context.Gigs.Where(g => g.ArtistId == userId && g.DateTime > DateTime.Now)
+                                    .Include(g => g.Genre)
+                                    .ToList();
+            return View(gigs);
         }
+       
     }
 }
