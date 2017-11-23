@@ -194,6 +194,7 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\System.Web.WebPages.R
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.InitialMigration.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddingGigGenreModels.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddDataAnnotation.resources
@@ -203,9 +204,8 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migratio
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.addNameToApplicationUser.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttendance.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddFollowing.resources
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledGig.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csproj.GenerateResource.Cache
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csproj.CoreCompileInputs.cache
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.pdb
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledGig.resources

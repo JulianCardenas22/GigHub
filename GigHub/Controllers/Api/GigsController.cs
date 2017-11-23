@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace GigHub.Api
+namespace GigHub.Controllers.Api
 {
     [Authorize]
     public class GigsController : ApiController
@@ -24,6 +24,10 @@ namespace GigHub.Api
         {
             var userId = User.Identity.GetUserId();
             var gig = _context.Gigs.SingleOrDefault(g => g.Id == id && g.ArtistId == userId);
+
+            if (gig.IsCanceled)
+                return NotFound();
+
             gig.IsCanceled = true;
             _context.SaveChanges();
 

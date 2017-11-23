@@ -18,6 +18,12 @@
             <div class="details">
                 <span class="artist">
                     @gig.Artist.Name
+                    
+                    @if (gig.IsCanceled)
+                    {
+                        <spam class="label label-warning" >Canceled</spam>
+                    }
+
 
                     @if (Model.ShowActions)
                     {
