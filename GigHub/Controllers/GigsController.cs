@@ -119,7 +119,7 @@ namespace GigHub.Controllers
             var viewModel = new GigFormViewModel
             {
                 Id = gig.Id,
-                Date = gig.DateTime.ToString("d MMM yyyy"),
+                Date = gig.DateTime.ToString("d/M/yyyy"),
                 Time = gig.DateTime.ToString("HH:mm"),
                 Genre= gig.GenreId,
                 Venue = gig.Venue,
