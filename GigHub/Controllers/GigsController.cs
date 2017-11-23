@@ -8,6 +8,7 @@ using GigHub.ViewModel;
 using Microsoft.AspNet.Identity;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using System.Data.Entity;
 
 namespace GigHub.Controllers
 {
@@ -55,6 +56,7 @@ namespace GigHub.Controllers
 
             _context.Gigs.Add(gig);
             _context.SaveChanges(); }
+
             catch (DbEntityValidationException dbEx)
             {
                 foreach (var validationErrors in dbEx.EntityValidationErrors)
@@ -70,6 +72,28 @@ namespace GigHub.Controllers
 
             return RedirectToAction("Index", "Home");
             
+        }
+
+        [Authorize]
+        public ActionResult Attending() {
+            var userId = User.Identity.GetUserId();
+            var gigs = _context.Attendances.Where(a => a.AttendeeId == userId)
+                                           .Select(a => a.Gig)
+                                           .Include(g => g.Artist)
+                                           .Include(g => g.Genre)
+                                           .ToList();
+                                        
+               
+            var viewModel = new GigsViewModel
+            {
+                UpComingGigs = gigs,
+                ShowActions = User.Identity.IsAuthenticated,
+                Heading="Gigs I'm Attending"
+
+            };
+
+          
+            return View("Gigs",viewModel);
         }
     }
 }

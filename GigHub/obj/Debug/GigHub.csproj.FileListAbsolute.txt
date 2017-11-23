@@ -194,7 +194,6 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\System.Web.WebPages.R
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.InitialMigration.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddingGigGenreModels.resources
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddDataAnnotation.resources

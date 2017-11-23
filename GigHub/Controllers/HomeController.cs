@@ -31,10 +31,10 @@ namespace GigHub.Controllers
             {
                 UpComingGigs = upComingGigs,
                 ShowActions = User.Identity.IsAuthenticated,
-                Heading = "Next Gigs"
+                Heading = "Home"
             };
 
-            return View(viewModel);
+            return View("Gigs",viewModel);
         }
 
        
