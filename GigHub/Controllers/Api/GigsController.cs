@@ -33,11 +33,22 @@ namespace GigHub.Controllers.Api
 
             gig.Cancel();
 
-            
             _context.SaveChanges();
 
             return Ok();
 
         }
+
+        [HttpPut]
+        public IHttpActionResult Updated(int id) {
+            var userId = User.Identity.GetUserId();
+            var gig = _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
+                                   .SingleOrDefault(g => g.Id == id && g.ArtistId == userId);
+
+            gig.Update();
+
+            return Ok();
+        }
+
     }
 }

@@ -137,7 +137,6 @@ namespace GigHub.Controllers
         public ActionResult Update(GigFormViewModel viewModel)
         {
           
-
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
@@ -145,11 +144,11 @@ namespace GigHub.Controllers
             }
 
             var artistId = User.Identity.GetUserId();
-            var gig = _context.Gigs.SingleOrDefault(g => g.Id == viewModel.Id && g.ArtistId == artistId);
+            var gig = _context.Gigs.Include(a => a.Attendances)
+                                   .SingleOrDefault(g => g.Id == viewModel.Id && g.ArtistId == artistId);
 
-            gig.Venue = viewModel.Venue;
-            gig.DateTime = viewModel.GetDateTime();
-            gig.GenreId = viewModel.Genre;
+            gig.Modify(viewModel.Venue, viewModel.GetDateTime(), viewModel.Genre);
+           
 
             _context.SaveChanges();
    
