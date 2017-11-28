@@ -45,7 +45,7 @@ namespace GigHub.Controllers.Api
             var gig = _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
                                    .SingleOrDefault(g => g.Id == id && g.ArtistId == userId);
 
-            gig.Update();
+            gig.Modify(gig.DateTime,gig.Venue,gig.GenreId);
 
             return Ok();
         }

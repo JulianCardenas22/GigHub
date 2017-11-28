@@ -39,6 +39,7 @@ namespace GigHub.Models
         }
 
         public void Cancel() {
+
             IsCanceled = true;
 
             var notification =  Notification.GigCanceled(this);

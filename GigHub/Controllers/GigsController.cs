@@ -147,7 +147,7 @@ namespace GigHub.Controllers
             var gig = _context.Gigs.Include(a => a.Attendances)
                                    .SingleOrDefault(g => g.Id == viewModel.Id && g.ArtistId == artistId);
 
-            gig.Modify(viewModel.Venue, viewModel.GetDateTime(), viewModel.Genre);
+            gig.Modify(viewModel.GetDateTime(),viewModel.Venue, viewModel.Genre);
            
 
             _context.SaveChanges();
