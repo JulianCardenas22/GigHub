@@ -13,6 +13,10 @@ namespace GigHub.Controllers.Api
     {
         private ApplicationDbContext _context;
 
+        public NotificationsController()
+        {
+            _context = new ApplicationDbContext();
+        }
 
         public IEnumerable<NotificationDTO> GetNewNotifications()
         {
