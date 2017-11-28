@@ -6,9 +6,16 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        
-    <li class="dropdown">
-        <a href="#" class="dropdown dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">@User.Identity.GetUserName()! <span class="caret"></span></a>
+        <li class="notifications">
+            <a href="#">
+                <i class="glyphicon glyphicon-globe"></i>
+                <span class="badge js-notification-count hide">3</span>
+            </a>
+        </li>
+
+       
+       <li class="dropdown">
+            <a href="#" class="dropdown dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">@User.Identity.GetUserName()! <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="@Url.Action("Attending","Gigs")">Gigs I'm Going</a></li>
             <li><a href="@Url.Action("Mine","Gigs")">My Upcoming Gigs</a></li>

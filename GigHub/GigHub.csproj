@@ -202,8 +202,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MappingProfile.cs" />
-    <Compile Include="Controllers\Api\GenreDTO.cs" />
-    <Compile Include="Controllers\Api\GigDTO.cs" />
+    <Compile Include="Dto\GenreDTO.cs" />
+    <Compile Include="Dto\GigDTO.cs" />
     <Compile Include="Controllers\Api\GigsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -213,9 +213,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\AttendancesController.cs" />
-    <Compile Include="Controllers\Api\NotificationDTO.cs" />
+    <Compile Include="Dto\NotificationDTO.cs" />
     <Compile Include="Controllers\Api\NotificationsController.cs" />
-    <Compile Include="Controllers\Api\UserDTO.cs" />
+    <Compile Include="Dto\UserDTO.cs" />
     <Compile Include="Controllers\FolloweesController.cs" />
     <Compile Include="Controllers\Api\FollowingsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />

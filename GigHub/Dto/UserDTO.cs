@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace GigHub.Controllers.Api
+namespace GigHub.Dto
 {
     public class UserDTO
     {

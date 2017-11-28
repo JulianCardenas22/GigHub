@@ -54,10 +54,19 @@ textarea {
     .navbar-inverse .navbar-brand {
         color: #ffffff;
 }
+    .navbar-inverse .notifications {
+        position:relative;
+    }
+    .navbar-inverse .notifications .badge{
+        position: absolute;
+        top: 8px;
+        right:0px;
+        background-color: #a80a0a
+    }
 
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-        background-color: #d2101099;
-}
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        background-color: #ce0000;
+    }
     .navbar-inverse .navbar-nav > .dropdown > a .caret {
         border-top-color: #ffffff;
         border-bottom-color: #ffffff;
@@ -107,7 +116,7 @@ border-color:#2196f3;
 .dropdown-menu {
 box-shadow:none;
 -webkit-box-shadow:none;
-
+ width:100%;
 }
 
 .field-validation-error {
@@ -129,7 +138,7 @@ box-shadow:none;
     color:white;
     text-align:center;
     width :60px;
-    ms-border-radius:9px;
+   
     border-radius: 9px;
 }
     .gigs > li .date .day {
@@ -166,3 +175,4 @@ box-shadow:none;
     .gigs > li:hover .actions{
         display:block;
     }
+

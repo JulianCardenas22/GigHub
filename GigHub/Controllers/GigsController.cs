@@ -144,17 +144,18 @@ namespace GigHub.Controllers
             }
 
             var artistId = User.Identity.GetUserId();
-            var gig = _context.Gigs.Include(a => a.Attendances)
+            // Eager Loading
+            var gig = _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
                                    .SingleOrDefault(g => g.Id == viewModel.Id && g.ArtistId == artistId);
 
-            gig.Modify(viewModel.GetDateTime(),viewModel.Venue, viewModel.Genre);
-           
 
+            //Action Type
+            gig.Modify(viewModel.GetDateTime(),viewModel.Venue, viewModel.Genre);
+            
             _context.SaveChanges();
    
             
             return RedirectToAction("Mine", "Gigs");
-
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GigHub.Controllers.Api
+namespace GigHub.Dto
 {
     public class GigDTO
     {

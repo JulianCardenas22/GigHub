@@ -7,9 +7,8 @@ namespace GigHub.Models
 {
     public enum NotificationType
     {
-        GigCanceled=1,
-        GigUpdated = 1,
-        GigCreated = 1,
-
+        GigCanceled = 1,
+        GigUpdated  = 2,
+        GigCreated  = 3
     }
 }
