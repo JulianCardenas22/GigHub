@@ -44,7 +44,21 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-   <script>
+   
+
+    <!--       <%=values   %>        <%    Logic Here      %>     -->
+    <script type="text/x-template" id="notifications-template">
+       <ul>
+           <%
+           _.each(notifications,function(notification){
+            <li> </li>
+           })
+           %>
+       </ul>
+        Hello <%= name %>
+    </script>
+    
+    <script>
 
        $(document).ready(function () {
 
@@ -60,16 +74,13 @@
                html: true,
                title: "Notifications",
                content: function () {
-                   var compiled = _.template("Hello <%= name %>");
+                   var compiled = _.template($("#notifications-template").html());
                    var html = compiled({ name: "julian" });
 
                    return html;
                },
-               placement : "bottom"
-
+               placement: "bottom"
            });
-
-
         });
 
     </script>
