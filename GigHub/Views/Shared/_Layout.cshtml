@@ -51,8 +51,25 @@
            $.getJSON("/api/notifications", function (notifications) {
                   
                   $(".js-notification-count").text(notifications.length)
-                                            .removeClass("hide");
-            });
+                   .removeClass("hide")
+                   .addClass("animated bounceInDown");
+           });
+
+
+           $(".notifications").popover({
+               html: true,
+               title: "Notifications",
+               content: function () {
+                   var compiled = _.template("Hello <%= name %>");
+                   var html = compiled({ name: "julian" });
+
+                   return html;
+               },
+               placement : "bottom"
+
+           });
+
+
         });
 
     </script>
