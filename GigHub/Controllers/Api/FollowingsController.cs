@@ -19,10 +19,11 @@ namespace GigHub.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        [HttpPost]
         public IHttpActionResult Follow(FollowingDto dto)
         {
             var userId = User.Identity.GetUserId();
-        
+
             var exists = _context.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == dto.FolloweeId);
 
             if (exists)
@@ -37,9 +38,27 @@ namespace GigHub.Controllers.Api
 
             _context.Followings.Add(following);
             _context.SaveChanges();
-            
+
             return Ok();
         }
+
+        //Delete Follwing 
+        [HttpDelete]
+        public IHttpActionResult DeleteFollowing(FollowingDto dto)
+        {
+            var userId = User.Identity.GetUserId();
+            var follow = _context.Followings.SingleOrDefault(f => f.FollowerId == userId && f.FolloweeId == dto.FolloweeId);
+         
+
+            if (follow == null)
+                return BadRequest("the follow doesnt exist");
+            
+          
+            _context.Followings.Remove(follow);
+            _context.SaveChanges();
+
+            return Ok();
+            }
 
     }
 }

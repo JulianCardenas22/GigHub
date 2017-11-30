@@ -1,4 +1,5 @@
-﻿@model GigHub.Models.Gig 
+﻿@model GigHub.ViewModel.GigDetailsViewModel
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,8 +7,19 @@
 
 <h2>Details</h2>
 
-<h3>@Model.Artist</h3> 
-<p>@Model.Venue</p>
-<p>@Model.DateTime</p>
+<h3>
+    @Model.Gig.Artist.Name
+    @if (@Model.IsFollowing){
+    <button class="btn btn-info">Following</button>
+    }else{
+    <button class="btn btn-info">Follow</button>
+    }
+    
+    </h3> 
+<p>@Model.Gig.Venue</p>
+<p>@Model.Gig.DateTime.ToString("dd/MM/yyyy") at @Model.Gig.DateTime.ToString("HH:mm")</p>
 
-
+@if (Model.IsAttending)
+{
+    <p>you are going to this event.</p>
+}
