@@ -157,5 +157,22 @@ namespace GigHub.Controllers
             
             return RedirectToAction("Mine", "Gigs");
         }
+
+        [HttpPost]
+        public ActionResult Search(GigsViewModel viewModel)
+        {
+            return RedirectToAction("Index", "Home", new { query = viewModel.SearchTerm });
+        }
+
+        [Authorize]
+        public ActionResult Details(int id )
+        {
+            var gig = _context.Gigs.Where(g => g.Id == id).FirstOrDefault();
+
+
+        
+
+            return View("Details","Gigs", gig);
+        }
     }
 }

@@ -60,6 +60,8 @@ namespace GigHub.Models
             foreach (var attendee in Attendances.Select(a => a.Attendee).ToList())
                 attendee.Notify(notification);
         }
+
+       
         
     }
 }

@@ -34,8 +34,16 @@
             </div>
             <div class="details">
                 <span class="artist">
-                    @gig.Artist.Name
-                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink(@gig.Artist.Name, "Details", "Gigs", new { id = gig.Id },null)
+
+                    }
+                    else
+                    {
+                        @gig.Artist.Name
+                    }
+
                     @if (gig.IsCanceled)
                     {
                         <spam class="label label-warning" >Canceled</spam>

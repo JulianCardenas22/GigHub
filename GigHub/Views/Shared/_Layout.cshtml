@@ -10,6 +10,7 @@
 
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,13 +27,12 @@
                     {
                         <li>@Html.ActionLink("Add a Gig", "Create", "Gigs")</li>
                     }
-                  
-                 
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -41,17 +41,17 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/lib")
+
     @RenderSection("scripts", required: false)
    
-    @* Template  *@
+    @* Template -- popover notification  *@
     <script type="text/x-template" id="notifications-template">
         <ul class="notifications">
             <%
             _.each(notifications, function(notification){
             if (notification.type == 1) { %>
-            <li><span class="highlight"><%= notification.gig.artist.name %></span> has canceled the gig at <%= notification.gig.venue %>.</li>
+            <li><span class="highlight"><%= notification.gig.artist.name %></span> has canceled the gig at <%= notification.gig.venue %> at <%= moment(notification.gig.dateTime).format("DD/MM/YYYY") %>.</li>
             <% }
 
             else if (notification.type == 2) {
@@ -64,7 +64,13 @@
             originalValues.push(notification.originalVenue);
             newValues.push(notification.gig.venue);
             }
-    
+
+            if (notification.originalDateTime != notification.gig.dateTime) {
+            changes.push('date/time');
+            originalValues.push(moment(notification.originalDateTime).format("DD/MM/YYYY"));
+            newValues.push(moment(notification.gig.dateTime).format("DD/MM/YYYY"));
+            }
+
             %>
             <li><span class="highlight"><%= notification.gig.artist.name %></span> has changed the <%= changes.join(' and ') %> of the gig from <%= originalValues.join('/') %> to <%= newValues.join('/') %></li>
             <%
@@ -94,9 +100,17 @@
                         var compiled = _.template($("#notifications-template").html());
                         return compiled({ notifications: notifications });
                     },
-                    placement: "bottom"
-                 
-                });
+                    placement: "bottom",
+                    template: '<div class="popover popover-notifications" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+
+                }).on("shown.bs.popover", function () {
+                    $.post("/api/notifications/MarkAsRead").done(function () {
+                        $(".js-notifications-count").text("").addClass("hide");
+                    }).fail(function () {
+                        console.log("Error consuming API/NOTIFICATIONS/MARKASREAD");
+                    });
+
+                    });
 
             });
         });

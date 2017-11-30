@@ -33,5 +33,11 @@ namespace GigHub.Models
         public Notification Notification { get; private set; }
 
         public bool IsRead { get; set; }
+
+        public void Read()
+        {
+            IsRead = true;
+        }
+
     }
 }
