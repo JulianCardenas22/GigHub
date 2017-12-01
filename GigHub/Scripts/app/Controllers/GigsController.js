@@ -1,23 +1,23 @@
 ﻿
-
 var GigsController = function (attendanceServices) {
     var button;
 
-    var init = function () {
-        $(".js-toggle-attendance").click(toggleAttendance);
+    var init = function (container) {
+        $(container).on("click", ".js-toggle-attendance", toggleAttendance)
+
     };
-  
+
     var toggleAttendance = function (e) {
         button = $(e.target);
         var gigId = button.attr("data-gig-id");
         if (button.hasClass("btn-default"))
-            attendanceServices.createAttendance(gigId, done ,fail);
+            attendanceServices.createAttendance(gigId, done, fail);
         else
             attendanceServices.deleteAttendance(gigId, done, fail);
     };
 
-  
-    var fail= function(){
+
+    var fail = function () {
         alert("Something Wrong API Attendances");
     };
 
@@ -27,10 +27,10 @@ var GigsController = function (attendanceServices) {
     };
 
     return {
-        init: init   
+        init: init
     }
 
-}(AttendanceServices); 
+}(AttendanceServices);
 
 
 
