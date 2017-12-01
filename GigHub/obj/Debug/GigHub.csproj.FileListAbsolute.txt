@@ -69,6 +69,12 @@ C:\Users\julian.cardenas\source\repos\GigHub\obj\Debug\GigHub.csprojResolveAssem
 C:\Users\julian.cardenas\source\repos\GigHub\obj\Debug\GigHub.csproj.CoreCompileInputs.cache
 C:\Users\julian.cardenas\source\repos\GigHub\obj\Debug\GigHub.dll
 C:\Users\julian.cardenas\source\repos\GigHub\obj\Debug\GigHub.pdb
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.IO.Compression.dll
+C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\VBCSCompiler.exe
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\ApplicationInsights.config
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\GigHub.dll.config
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\GigHub.dll
@@ -80,13 +86,9 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\csi.exe
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\csi.exe.config
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\csi.rsp
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -96,7 +98,6 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.Console
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.IO.Compression.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -119,7 +120,6 @@ C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\System.Xml.XPa
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\vbc.exe
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\vbc.exe.config
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\vbc.rsp
-C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\VBCSCompiler.exe
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\Antlr3.Runtime.dll
 C:\Users\julian.cardenas\Documents\JuGIT\GigHub\GigHub\bin\AutoMapper.dll

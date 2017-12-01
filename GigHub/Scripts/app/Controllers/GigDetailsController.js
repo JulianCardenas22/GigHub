@@ -1,19 +1,24 @@
 ﻿var GigDetailsController = function (followingServices) {
     var followButton;
 
-    var init = function (e) {
+    var init = function (container) {
+     $(".js-toggle-follow").click(toggleFollowing);
+    };
+
+    var toggleFollowing = function (e) {
         followButton = $(e.target);
+
         var followeeId = followButton.attr("data-user-id");
 
         if (followButton.hasClass("btn-default"))
-            followingServices.createFollowing(followeeid, done, fail);
+            followingServices.createFollowing(followeeId, done, fail);
         else
-            followingServices.deleteFollowing(followeeid, done, fail);
+            followingServices.deleteFollowing(followeeId, done, fail);
     };
 
 
     var done = function () {
-        var text = followButton.text() == "Follow" ? "Follwing" : "Follow";
+        var text = followButton.text() == "Follow" ? "UnFollow" : "Follow";
 
         followButton.toggleClass("btn-info").toggleClass("btn-default").text(text);
     };
@@ -23,7 +28,7 @@
 
 
     return {
-        init : init
+        init: init
     }
 
 }(FollowingServices);

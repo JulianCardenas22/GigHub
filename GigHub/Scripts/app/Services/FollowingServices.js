@@ -10,12 +10,13 @@
         $.ajax({
             url: "/api/followings/" + followeeId,
             method: "DELETE"
-        }).done(done)
-           .fail(fail);
+        })
+          .done(done)
+          .fail(fail);
     };
 
     return {
         createFollowing: createFollowing,
         deleteFollowing: deleteFollowing
     }
-};
+}();

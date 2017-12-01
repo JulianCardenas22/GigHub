@@ -44,7 +44,7 @@ namespace GigHub.Controllers.Api
 
        
         [HttpDelete]
-        public IHttpActionResult DeleteFollowing(string id)
+        public IHttpActionResult UnFollow(string id)
         {
             var userId = User.Identity.GetUserId();
             var follow = _context.Followings.SingleOrDefault(f => f.FollowerId == userId && f.FolloweeId == id);

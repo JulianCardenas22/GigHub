@@ -14,9 +14,9 @@ namespace GigHub.Repositories
             _context = context;
         }
 
-        public Following GetFollowing(String userId, String artistId)
+        public Following GetFollowing(String followerId, String followeeId)
         {
-            return _context.Followings.SingleOrDefault(a => a.FollowerId == userId && a.FolloweeId == userId);
+            return _context.Followings.SingleOrDefault(a => a.FollowerId == followerId && a.FolloweeId == followeeId);
         }
     }
 }
