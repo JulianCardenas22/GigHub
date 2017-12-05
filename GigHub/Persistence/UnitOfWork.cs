@@ -1,9 +1,7 @@
-﻿using GigHub.Core.Models;
+﻿using GigHub.Core.Repositories;
+using GigHub.Persistence.Repositories;
 using GigHub.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 
 namespace GigHub.Persistence
 {
@@ -16,12 +14,22 @@ namespace GigHub.Persistence
         public IFollowRepository Follows { get;private set; }
         public IAttendanceRepository Attendances { get;private set; }
 
+
+        public IApplicationUserRepository Users { get; private set; }
+        public INotificationRepository Notifications { get; private set; }
+        public IUserNotificationRepository UserNotifications { get; private set; }
+
+
+
         public UnitOfWork(ApplicationDbContext context){
             _context = context;
             Gigs = new GigRepository(_context);
             Attendances = new AttendanceRepository(context);
             Genres = new GenreRepository(context);
             Follows = new FollowRepository(context);
+            Users = new ApplicationUserRepository(context);
+            Notifications = new NotificationRepository(context);
+            UserNotifications = new UserNotificationRepository(context);
         }
 
         public void Complete(){

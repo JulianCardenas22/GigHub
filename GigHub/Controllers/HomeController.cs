@@ -9,6 +9,7 @@ using GigHub.Core.ViewModel;
 using Microsoft.AspNet.Identity;
 using GigHub.Repositories;
 using GigHub.Persistence;
+using GigHub.Persistence.Repositories;
 
 namespace GigHub.Controllers
 {
