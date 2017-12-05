@@ -1,4 +1,5 @@
 ﻿using GigHub.Core.Models;
+using GigHub.Core.Repositories;
 using GigHub.Persistence;
 using GigHub.Repositories;
 using System;

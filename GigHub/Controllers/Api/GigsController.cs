@@ -8,33 +8,39 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
 using GigHub.Persistence;
+using GigHub.Repositories;
 
 namespace GigHub.Controllers.Api
 {
     [Authorize]
     public class GigsController : ApiController
     {
-        private ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GigsController()
+        public GigsController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
+
         }
 
         [HttpDelete]
         public IHttpActionResult Cancel(int id)
         {
             var userId = User.Identity.GetUserId();
-            var gig = _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
-                                   .SingleOrDefault(g => g.Id == id && g.ArtistId == userId);
+            var gig = _unitOfWork.Gigs.GetGigWithAttendee(id);
+           
                                  
 
             if (gig.IsCanceled)
                 return NotFound();
 
+            if (gig.ArtistId != userId)
+                return Unauthorized();
+
+
             gig.Cancel();
 
-            _context.SaveChanges();
+            _unitOfWork.Complete();
 
             return Ok();
 
@@ -43,8 +49,7 @@ namespace GigHub.Controllers.Api
         [HttpPut]
         public IHttpActionResult Updated(int id) {
             var userId = User.Identity.GetUserId();
-            var gig = _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
-                                   .SingleOrDefault(g => g.Id == id && g.ArtistId == userId);
+            var gig = _unitOfWork.Gigs.GetGigWithAttendee(id);
 
             gig.Modify(gig.DateTime,gig.Venue,gig.GenreId);
 

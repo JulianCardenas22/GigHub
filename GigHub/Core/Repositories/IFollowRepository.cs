@@ -1,7 +1,7 @@
 ﻿using GigHub.Core.Models;
 using System;
 
-namespace GigHub.Repositories
+namespace GigHub.Core.Repositories
 {
     public interface IFollowRepository
     {

@@ -24,11 +24,10 @@ namespace GigHub.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-        /*    var artistFollowed = _context.Followings.Where(f => f.FollowerId == userId)
-                                            .Select(f=> f.FolloweeId)
-                                            .ToList();
-*/
-            return View( /*var artistFollowed*/);
+
+            var artistFollowed = _unitOfWork.Users.GetArtistsFollowedBy(userId);
+
+            return View(artistFollowed);
         }
     }
 }

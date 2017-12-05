@@ -1,6 +1,5 @@
 ﻿using GigHub.Core.Models;
-using GigHub.Persistence;
-using GigHub.Repositories;
+using GigHub.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,18 +17,18 @@ namespace GigHub.Persistence.Repositories
             _context = context;
         }
 
-         public Gig  GetGigWithAttendee(int gigId)
+        public Gig GetGigWithAttendee(int gigId)
         {
-           return  _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
-                                     .SingleOrDefault(g => g.Id == gigId);
+            return _context.Gigs.Include(g => g.Attendances.Select(a => a.Attendee))
+                                      .SingleOrDefault(g => g.Id == gigId);
 
         }
 
         public Gig GetGigWithArtistGenre(int id)
         {
-         return    _context.Gigs.Include(g => g.Artist)
-                                   .Include(g => g.Genre)
-                                   .SingleOrDefault(g => g.Id == id);
+            return _context.Gigs.Include(g => g.Artist)
+                                      .Include(g => g.Genre)
+                                      .SingleOrDefault(g => g.Id == id);
         }
 
 
@@ -40,14 +39,14 @@ namespace GigHub.Persistence.Repositories
                                     .ToList();
         }
 
-        public  IEnumerable<Gig> GetGitUserAttendances(String userId)
+        public IEnumerable<Gig> GetGitUserAttendances(String userId)
         {
             return _context.Attendances.Where(a => a.AttendeeId == userId)
                                            .Select(a => a.Gig)
                                            .Include(g => g.Artist)
                                            .Include(g => g.Genre)
                                            .ToList();
-            
+
         }
 
         public Gig GetGig(int id)
@@ -61,6 +60,24 @@ namespace GigHub.Persistence.Repositories
         public void AddGig(Gig gig)
         {
             _context.Gigs.Add(gig);
+        } 
+
+        public IEnumerable<Gig> GetUpCommingGigs(string searchTerm = null)
+        {
+            var upcomingGigs= _context.Gigs.Include(g => g.Artist)
+                                .Include(g => g.Genre)
+                                .Where(g => g.DateTime > DateTime.Now && !g.IsCanceled);
+
+            if (!String.IsNullOrWhiteSpace(searchTerm))
+            {
+                upcomingGigs = upcomingGigs
+                    .Where(g =>
+                            g.Artist.Name.Contains(searchTerm) ||
+                            g.Genre.Name.Contains(searchTerm) ||
+                            g.Venue.Contains(searchTerm));
+            }
+
+            return upcomingGigs.ToList();
         }
        
     }

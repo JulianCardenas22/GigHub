@@ -1,6 +1,7 @@
 ﻿using GigHub.Core.Dto;
 using GigHub.Core.Models;
 using GigHub.Persistence;
+using GigHub.Repositories;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,12 @@ namespace GigHub.Controllers.Api
     [Authorize]
     public class AttendancesController : ApiController
     {
-        private ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AttendancesController()
+
+        public AttendancesController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
 
         
@@ -26,7 +28,8 @@ namespace GigHub.Controllers.Api
         public IHttpActionResult Attend(AttendanceDto dto)
         {
             var userId = User.Identity.GetUserId();
-            var exists = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId);
+            var exists = _unitOfWork.Attendances.GetAttendance(userId, dto.GigId) != null;
+              
 
             if (exists)
                 return BadRequest("Attendance already exists.");
@@ -38,8 +41,8 @@ namespace GigHub.Controllers.Api
                 AttendeeId = userId
             };
 
-            _context.Attendances.Add(attendance);
-            _context.SaveChanges();
+            _unitOfWork.Attendances.Add(attendance);
+            _unitOfWork.Complete();
 
             return Ok() ;
         }
@@ -48,13 +51,14 @@ namespace GigHub.Controllers.Api
         public IHttpActionResult DeleteAttende(int id)
         {
             var userId = User.Identity.GetUserId();
-            var attende = _context.Attendances.SingleOrDefault(a => a.AttendeeId == userId && a.GigId == id);
+            var attende = _unitOfWork.Attendances.GetAttendance(userId, id);
+           
 
             if (attende == null)
                 return NotFound();
 
-            _context.Attendances.Remove(attende);
-            _context.SaveChanges();
+            _unitOfWork.Attendances.Remove(attende);
+            _unitOfWork.Complete();
 
             return Ok(id);
 
