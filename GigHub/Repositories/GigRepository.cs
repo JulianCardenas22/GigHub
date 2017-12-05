@@ -55,6 +55,11 @@ namespace GigHub.Repositories
                                 .SingleOrDefault(g => g.Id == id);
         }
 
+
+        public void AddGig(Gig gig)
+        {
+            _context.Gigs.Add(gig);
+        }
        
     }
 }
