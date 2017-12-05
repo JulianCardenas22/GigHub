@@ -3,11 +3,6 @@ using GigHub.Core.Models;
 using GigHub.Persistence;
 using GigHub.Repositories;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace GigHub.Controllers.Api
@@ -17,20 +12,20 @@ namespace GigHub.Controllers.Api
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public FollowingsController(IUnitOfWork unitOfWork)
+        public FollowingsController()
         {
-            _unitOfWork = unitOfWork;
+    
+            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
         }
-
+      
         [HttpPost]
         public IHttpActionResult Follow(FollowingDto dto)
         {
             var userId = User.Identity.GetUserId();
 
-            var exists = _unitOfWork.Follows.GetFollowing(userId, dto.FolloweeId) != null ; 
+            var exists = _unitOfWork.Follows.GetFollowing(userId, dto.FolloweeId); 
             
-
-            if (exists)
+            if (exists != null)
                 return BadRequest("Following already exists");
 
 

@@ -3,11 +3,6 @@ using GigHub.Core.Models;
 using GigHub.Persistence;
 using GigHub.Repositories;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace GigHub.Controllers.Api
@@ -18,9 +13,9 @@ namespace GigHub.Controllers.Api
         private readonly IUnitOfWork _unitOfWork;
 
 
-        public AttendancesController(IUnitOfWork unitOfWork)
+        public AttendancesController()
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
         }
 
         
