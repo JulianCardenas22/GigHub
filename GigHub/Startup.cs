@@ -11,7 +11,6 @@ namespace GigHub
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-
             Mapper.Initialize(c => c.AddProfile<MappingProfile>());
 
         }
