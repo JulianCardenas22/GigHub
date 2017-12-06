@@ -1,7 +1,6 @@
-﻿using GigHub.Core.Dto;
+﻿using GigHub.Core;
+using GigHub.Core.Dto;
 using GigHub.Core.Models;
-using GigHub.Persistence;
-using GigHub.Repositories;
 using Microsoft.AspNet.Identity;
 using System.Web.Http;
 

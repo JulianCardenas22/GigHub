@@ -1,7 +1,6 @@
-﻿
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using System.Web.Http;
-using GigHub.Repositories;
+using GigHub.Core;
 
 namespace GigHub.Controllers.Api
 {
@@ -21,13 +20,12 @@ namespace GigHub.Controllers.Api
         {
             var userId = User.Identity.GetUserId();
             var gig = _unitOfWork.Gigs.GetGigWithAttendee(id);
-           
-                                 
 
-            if (gig.IsCanceled)
+
+            if (gig == null || gig.IsCanceled)
                 return NotFound();
-
-            if (gig.ArtistId != userId)
+      
+             if (gig.ArtistId != userId)
                 return Unauthorized();
 
 

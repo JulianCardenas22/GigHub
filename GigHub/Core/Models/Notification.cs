@@ -1,6 +1,5 @@
 ﻿using System;
 
-using System.ComponentModel.DataAnnotations;
 
 namespace GigHub.Core.Models
 {
