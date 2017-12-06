@@ -8,17 +8,19 @@ namespace GigHub.Core.Models
     {
        
         public int Id { get; private set; }
-        public DateTime DateTime { get; private set; }
-        public NotificationType Type { get;private  set; }
-        public DateTime? OriginalDateTime { get;private set; }
-        public String OriginalVenue { get;private set; }
 
-        [Required]
+        public DateTime DateTime { get; private set; }
+
+        public NotificationType Type { get;private  set; }
+
+        public DateTime? OriginalDateTime { get;private set; }
+
+        public String OriginalVenue { get; private set; }
+
         public Gig Gig { get;private set; }
 
         // Default ctor for entity
-        protected Notification(){   
-        }
+        protected Notification(){}
 
         private Notification(Gig gig, NotificationType notificationType)
         {
@@ -27,20 +29,23 @@ namespace GigHub.Core.Models
             DateTime = DateTime.Now;
         }
 
-        public static Notification GigCreated(Gig gig)
-        {
+        public static Notification GigCreated(Gig gig){
+
             return new Notification(gig, NotificationType.GigCreated); 
         }
-        public static Notification GigUpdated(Gig  newGig, DateTime originalDateTime, String originalVenue)
-        {
+
+        public static Notification GigUpdated(Gig  newGig, DateTime originalDateTime, String originalVenue) {
 
            var notification = new Notification(newGig, NotificationType.GigUpdated);
+
             notification.OriginalDateTime = originalDateTime;
             notification.OriginalVenue = originalVenue;
+
             return notification;
         }
-        public static Notification GigCanceled(Gig gig)
-        {
+
+        public static Notification GigCanceled(Gig gig)  {
+
             return new Notification(gig, NotificationType.GigCanceled);
         }
 

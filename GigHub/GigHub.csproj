@@ -257,6 +257,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Entity Configuration\AttendanceConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\FollowConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\GenreConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\GigConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\NotificationConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\UserConfiguration.cs" />
+    <Compile Include="Persistence\Entity Configuration\UserNotificationConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201711211747483_InitialMigration.cs" />
     <Compile Include="Persistence\Migrations\201711211747483_InitialMigration.Designer.cs">
       <DependentUpon>201711211747483_InitialMigration.cs</DependentUpon>
@@ -426,7 +433,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Persistence\Entity Configuration\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

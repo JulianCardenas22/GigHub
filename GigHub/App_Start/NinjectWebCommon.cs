@@ -3,6 +3,8 @@
 
 namespace GigHub.App_Start
 {
+    using System.Web.Http;
+    using Ninject.Web.WebApi;
     using System;
     using System.Web;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
@@ -39,12 +41,14 @@ namespace GigHub.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
+     
+
             var kernel = new StandardKernel();
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
+               
                 RegisterServices(kernel);
 
                 kernel.Bind(x =>
@@ -53,6 +57,8 @@ namespace GigHub.App_Start
                      .SelectAllClasses()
                      .BindDefaultInterface();
                 });
+
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
 
                 return kernel;
             }

@@ -21,11 +21,9 @@ namespace GigHub.Core.Models
             User = user;
         }
      
-        [Key]
-        [Column(Order=1)]
+   
         public String UserId { get;private set; }
-        [Key]
-        [Column(Order = 2)]
+ 
         public int NotificationId { get;private set; }
 
         //navigation properties

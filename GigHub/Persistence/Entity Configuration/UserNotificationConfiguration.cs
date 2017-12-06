@@ -9,6 +9,9 @@ namespace GigHub.Persistence.Entity_Configuration
         public UserNotificationConfiguration()
         {
             HasKey(a => new { a.UserId, a.NotificationId });
+
+         HasRequired(n => n.User).WithMany(u => u.UserNotifications)
+                                 .WillCascadeOnDelete(false);
         }
     }
 }

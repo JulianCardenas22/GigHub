@@ -17,18 +17,13 @@ namespace GigHub.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Configurations.Add(new AttendanceConfiguration()); 
+            modelBuilder.Configurations.Add(new FollowConfiguration());
+            modelBuilder.Configurations.Add(new GenreConfiguration());
             modelBuilder.Configurations.Add(new GigConfiguration());
+            modelBuilder.Configurations.Add(new NotificationConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
-            modelBuilder.Configurations.Add(new AttendanceConfiguration());
-
-
-
-            modelBuilder.Entity<UserNotification>().HasRequired(n => n.User)
-                                                   .WithMany(u => u.UserNotifications)
-                                                   .WillCascadeOnDelete(false);
-
-
+            modelBuilder.Configurations.Add(new UserNotificationConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

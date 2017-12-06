@@ -12,10 +12,10 @@ namespace GigHub.Controllers.Api
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public FollowingsController()
+        public FollowingsController(IUnitOfWork unitOfWork)
         {
-    
-            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
+
+            _unitOfWork = unitOfWork;
         }
       
         [HttpPost]
